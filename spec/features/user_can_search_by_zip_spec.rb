@@ -14,14 +14,12 @@ describe "As a user" do
       within "#stations" do
         expect(page).to have_css(".station", count: 10)
 
-        within last ".station" do
+        within first ".station" do
           expect(page).to have_css(".station-name")
           expect(page).to have_css(".station-address")
           expect(page).to have_css(".station-type")
           expect(page).to have_css(".station-distance")
           expect(page).to have_css(".station-access-times")
-
-          expect(".station-distance").to be < 6
         end
       end
     end

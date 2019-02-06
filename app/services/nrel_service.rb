@@ -10,7 +10,7 @@ class NRELService
       fuel_type: "ELEC,LPG",
       limit: 10
     }
-    
+
     json = get_json("/api/alt-fuel-stations/v1/nearest.json", params)
     json[:fuel_stations]
   end
