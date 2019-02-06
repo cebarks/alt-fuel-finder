@@ -1,11 +1,13 @@
 <div id="stations">
   <% @search_facade.stations.each do |station| %>
-  <ul class="station">
-    <li class="station-name"><%= station.name %></li>
-    <li class="station-address"><%= station.address %></li>
-    <li class="station-type"><%= station.type %></li>
-    <li class="station-distance"><%= station.distance %></li>
-    <li class="station-access-times"><%= station.access_times %></li>
-  </ul>
+  <div class="card station" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title station-name"><%= station.name %></h5>
+      <h6 class="card-subtitle mb-2 text-muted station-address"><%= station.address %></h6>
+      <p class="card-text station-type">Type: <%= station.type %></p>
+      <p class="card-text station-distance">Distance: <%= station.distance %></p>
+      <p class="card-text station-access-times">Accessible Times: <%= station.access_times %></p>
+    </div>
+  </div>
   <% end %>
 </div>
