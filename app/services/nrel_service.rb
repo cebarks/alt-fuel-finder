@@ -4,8 +4,15 @@ class NRELService
   end
 
   def stations(zipcode)
-    json = get_json("/api/alt-fuel-stations/v1/nearest.json", location: zipcode, radius: 6, fuel_type: "ELEC,LPG", limit: 10)
-    require 'pry'; binding.pry
+    params = {
+      location: zipcode,
+      radius: 6,
+      fuel_type: "ELEC,LPG",
+      limit: 10
+    }
+    
+    json = get_json("/api/alt-fuel-stations/v1/nearest.json", params)
+    json[:fuel_stations]
   end
 
   private
@@ -13,7 +20,7 @@ class NRELService
   def get_json(path, **params)
     params[:api_key] = @api_key
     response = conn.get(path, params)
-    JSON.parse(response.body)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def conn

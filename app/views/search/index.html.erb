@@ -1,5 +1,5 @@
 <div id="stations">
-  <% @search_facade.stations do |station| %>
+  <% @search_facade.stations.each do |station| %>
   <ul class="station">
     <li class="station-name"><%= station.name %></li>
     <li class="station-address"><%= station.address %></li>
