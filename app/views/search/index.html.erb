@@ -1,0 +1,11 @@
+<div id="stations">
+  <% @search_facade.stations do |station| %>
+  <ul class="station">
+    <li class="station-name"><%= station.name %></li>
+    <li class="station-address"><%= station.address %></li>
+    <li class="station-type"><%= station.type %></li>
+    <li class="station-distance"><%= station.distance %></li>
+    <li class="station-access-times"><%= station.access_times %></li>
+  </ul>
+  <% end %>
+</div>

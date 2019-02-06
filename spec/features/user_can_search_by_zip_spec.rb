@@ -17,7 +17,7 @@ describe "As a user" do
         within last ".station" do
           expect(page).to have_css(".station-name")
           expect(page).to have_css(".station-address")
-          expect(page).to have_css(".station-fuel-type")
+          expect(page).to have_css(".station-type")
           expect(page).to have_css(".station-distance")
           expect(page).to have_css(".station-access-times")
 
