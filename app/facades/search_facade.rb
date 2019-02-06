@@ -1,10 +1,10 @@
 class SearchFacade
-  def initialize(parameters)
-    @zipcode = parameters
+  def initialize(zipcode)
+    @zipcode = zipcode
   end
 
   def stations
-    service.stations.map do |json_station|
+    service.stations(@zipcode).map do |json_station|
       Station.new(json_station)
     end
   end
