@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe "As a user" do
-  des "When I visit '/' and fill in the search form and submit it" do
+  describe "When I visit '/' and fill in the search form and submit it" do
     it "I should see a list of the 10 closest stations within 6 miles sorted by distance" do
       visit root_path
 
-      fill_in "zipcode", with: "80203"
+      fill_in "q", with: "80203"
 
       click_on "Locate"
 
