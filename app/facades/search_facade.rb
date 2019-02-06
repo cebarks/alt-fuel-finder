@@ -3,9 +3,15 @@ class SearchFacade
     @zipcode = parameters
   end
 
+  def stations
+    service.stations.map do |json_station|
+      Station.new(json_station)
+    end
+  end
+
   private
 
   def service
-    @service ||= RHELService.new(ENV["NREL_API_KEY"])
+    @service ||= NRELService.new(ENV["NREL_API_KEY"])
   end
 end
